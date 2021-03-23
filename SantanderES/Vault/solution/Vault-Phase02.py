@@ -28,6 +28,9 @@ with Diagram("Vault Solution Diagram - Fase 02", show=False, direction="LR"):
 		with Cluster("namespace san-vostok"):
 			podOnboardingCloud = Pod("onboarding-cloud")
 
+		with Cluster("namespace sanes-mialm"):
+			podMialm = Pod("mialm")
+
 	pod - statefulset - storages
 	pod >> configmap
 	flow = route >> service >> pod >> storages
@@ -54,3 +57,4 @@ with Diagram("Vault Solution Diagram - Fase 02", show=False, direction="LR"):
 	podTaskRelease >> route
 	podTaskSwitch >> route
 	podOnboardingCloud >> route
+	podMialm >> route
